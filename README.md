@@ -9,7 +9,10 @@ TO RUN MICROSERVICE:
 5. Run the command npm start to start the microservice
 6. The microservice should now be running at localhost, port 4000. (If need be, the location the microservice is run can be edited)
 
+
 PROGRAMATICALLY REQUESTING DATA:
+
+
 In the front end react project, install @apollo client
 import the following: import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 Create a new client
@@ -74,7 +77,9 @@ An example database entry:
     name: "Modern Toronto Townhouse",
     price: "$1,000,000",
 
+
 PROGRAMATICALLY RECEIVING DATA:
+
 
 As shown in the above hook, the microservice, using Apollo Server, will return a json object based on your query.
 The object will have information as follows: 
