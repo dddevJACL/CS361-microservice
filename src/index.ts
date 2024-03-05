@@ -111,12 +111,12 @@ const resolvers = {
         house.location === args.location &&
         (!args.homeStyle || house.homeStyle === args.homeStyle)
     ),
-    getHouseList: (_, args) => (
-             {
-                    location: args.location,
-                    houses: houses.filter((house) => house.location === args.location),
-              },
-    ),
+    getHouseList: (_, args) => [
+      {
+        location: args.location,
+        houses: houses.filter((house) => house.location === args.location),
+      },
+    ],
   },
 };
 
