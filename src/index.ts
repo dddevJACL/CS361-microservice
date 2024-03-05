@@ -18,9 +18,13 @@ type Query {
   houses: [House]
   house(id: ID!): House!
   getSearchResults(location: String, homeStyle: String): [House!]!
+  getHouseList(location: String!): [HouseList!]!
 }
 `;
-
+type HouseList {
+     location: String!
+     houses: [House]
+}
 
 const houses = [
   {
@@ -106,6 +110,12 @@ const resolvers = {
       (house) =>
         house.location === args.location &&
         (!args.homeStyle || house.homeStyle === args.homeStyle)
+    ),
+    getHouseList: (_, args) => (
+             {
+                    location: args.location,
+                    houses: houses.filter((house) => house.location === args.location),
+              },
     ),
   },
 };
