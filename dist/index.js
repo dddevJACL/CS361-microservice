@@ -18,6 +18,7 @@ type Query {
   getSearchResults(location: String, homeStyle: String): [House!]!
 }
 `;
+
 const houses = [
     {
         id: "1",
